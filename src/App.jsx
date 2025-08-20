@@ -6,8 +6,8 @@ function App() {
   const handleClick = async () => {
     try {
       const res = await fetch("https://298d3a18ed5f.ngrok-free.app/testme?name=HarryPotter");
-      const text = await res.text();
-      setResponse(text);
+      const text = await res.json();
+      setResponse(text.message);
     } catch (err) {
       setResponse("Error: " + err.message);
     }
